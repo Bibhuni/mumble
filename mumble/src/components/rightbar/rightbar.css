@@ -136,6 +136,27 @@
 	outline: #BDBDBD;
 }
 
+.rightbarUpdateProfile select{
+    background: #404358;
+	width: 90%;
+    height: 25px;
+    border-radius: 5px;
+    padding-left: 10px;
+    font-size: 18px;
+    border: 1px solid #bdbdbd3f;
+	margin-top: 10px;
+    color: white;
+}
+
+.rightbarUpdateProfile select:focus{
+	outline: #BDBDBD;
+}
+
+p{
+    color: wheat;
+}
+
+
 
 .rightbarUpdateProfile button{
     margin-top: 10px;
