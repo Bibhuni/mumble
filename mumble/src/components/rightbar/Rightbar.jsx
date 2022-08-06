@@ -27,6 +27,7 @@ export default function Rightbar({user}) {
   const updateCity = useRef();
   const updateFrom = useRef();
   const updateDesc = useRef();
+  const relationship = useRef();
 
 
 
@@ -66,6 +67,7 @@ export default function Rightbar({user}) {
       city: updateCity.current.value,
       from: updateFrom.current.value,
       desc: updateDesc.current.value,
+      relationship: relationship.current.value,
     }
     try{
       await axios.put(`/users/${user._id}`,{user,userId:user._id});
@@ -165,12 +167,18 @@ export default function Rightbar({user}) {
           </Link>
             ))}
       </div>
+      <p>Update Profile</p>
       {user.username === currentUser.username && (
       <div className="rightbarUpdateProfile">
         <form action="" className="rightbarUpdateForm" onSubmit={handleClicked}>
           <input ref={updateCity} type="text" placeholder="City" required className="city" />
           <input ref={updateFrom} type="text" placeholder="From" required className="from" />
           <input ref={updateDesc} type="text" placeholder="Description" required className="description" />
+          <select className="relationship" ref={relationship}>
+              <option value="1">Single</option>
+              <option value="2">Married</option>
+          </select>
+
           <button type="submit" className="rightbarSubmit">Update</button>
         </form>
         <form action="" className="rightbarUpdateForm" onSubmit={handlePic}>
